@@ -1,0 +1,32 @@
+package ir.maktab.dto;
+
+import ir.maktab.service.validation.ValidPassword;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
+public class LoginCustomerDto {
+    @NotBlank(message = "Please enter Email")
+    private String email;
+    @ValidPassword
+    private String password;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public LoginCustomerDto setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public LoginCustomerDto setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+}
